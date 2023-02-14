@@ -7,13 +7,21 @@
 }
 
 body {
-    padding: 30px;
     text-align: center;
     font-family: 'Noto Serif', serif;
+    background-color: $primary-background;
+    color: $primary-color;
 }
 
 h1 {
     font-family: 'Merriweather Sans', sans-serif;
+    background-color: $secondary-background;
+    color: $secondary-color;
+}
+
+h3 {
+    background-color: $secondary-background;
+    color: $secondary-color;
 }
 
 ul {
@@ -22,4 +30,5 @@ ul {
 
 a {
     text-decoration: none;
+    color: $secondary-color;
 }
