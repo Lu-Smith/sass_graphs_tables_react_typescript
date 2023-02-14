@@ -3,5 +3,16 @@ $primary-color: #596e79;
 $secondary-color: #c7b198; 
 $primary-background: #dfd3c3; 
 $secondary-background: #f0ece2;
-//padding
+
+//spacing
+$base-padding: 0.75rem;
+$base-margin: 0.75rem;
+
 //font
+$base-font: 18px;
+$large-font: 30px;
+$smalle-font: 10px;
+
+//borders
+$base-border: 2px solid $secondary-background;
+$base-border-radius: 20px;
