@@ -26,6 +26,10 @@ ul {
   list-style: none;
 }
 
+li {
+  padding: 0.75rem;
+}
+
 a {
   text-decoration: none;
   color: #c7b198;
@@ -34,4 +38,17 @@ a {
 .Header, .Footer {
   padding: 0.75rem;
   background-color: #f0ece2;
+}
+
+.Header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.Header ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }/*# sourceMappingURL=app.css.map */
