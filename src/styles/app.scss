@@ -1,4 +1,9 @@
+@import 'mixins.scss';
 @import 'variables.scss';
 @import 'base.scss';
 
+.Header, .Footer {
+    padding: $base-padding;
+    background-color: $secondary-background;
+}
 
