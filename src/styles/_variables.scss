@@ -10,8 +10,8 @@ $base-margin: 0.75rem;
 
 //font
 $base-font: 18px;
-$large-font: 30px;
-$smalle-font: 10px;
+$large-font: $base-font * 1.5;
+$small-font: $base-font * 0.75;
 
 //borders
 $base-border: 2px solid $secondary-background;
