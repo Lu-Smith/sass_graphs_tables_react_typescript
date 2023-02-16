@@ -15,7 +15,7 @@ const Main: React.FC = () => {
       .then(response => response.json())
       .then(data => setData(data));
       console.log(data);
-  }, []);
+  }, [data]);
 
   if (!data) {
     return <div>Loading...</div>;
@@ -34,13 +34,13 @@ const Main: React.FC = () => {
                 </tr>
               </thead>
               <tbody>
-              {data.map((insideData: DataProps, index:number) => {
-                return (
-                    <tr key={index}>
-                      <td>{insideData.date}</td>
-                      <td>{insideData.name}</td>
-                      <td>{insideData.sector_id}</td>
-                      </tr>
+                  {data.map((insideData: DataProps, index:number) => {
+                    return (
+                        <tr key={index}>
+                          <td>{insideData.date}</td>
+                          <td>{insideData.name}</td>
+                          <td>{insideData.sector_id}</td>
+                          </tr>
                     )
                   })}
               </tbody>
