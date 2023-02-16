@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Chart from 'chart.js';
 import Tables from './Tables';
+import Graphs from './Graphs';
 
 interface DataProps {
   date: string,
@@ -25,6 +26,8 @@ const Main: React.FC = () => {
   return (
     <div className='Main'>
       <h2>Graph 1</h2>
+      <Graphs data={data} />
+      <h2>Table 1</h2>
       <Tables data={data} />
     </div>
   )
