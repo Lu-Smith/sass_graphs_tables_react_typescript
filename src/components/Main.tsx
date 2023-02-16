@@ -24,16 +24,28 @@ const Main: React.FC = () => {
   return (
     <div className='Main'>
       <h2>Graph 1</h2>
-      {data.map((insideData: DataProps, index:number) => {
-        return (
-          <div key={index}>
-            <p>{insideData.date}</p>
-            <p>{insideData.name}</p>
-            <p>{insideData.sector_id}</p>
-            </div>
-        )
-      })}
-
+          <div >
+            <table>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Name</th>
+                  <th>Sector</th>
+                </tr>
+              </thead>
+              <tbody>
+              {data.map((insideData: DataProps, index:number) => {
+                return (
+                    <tr key={index}>
+                      <td>{insideData.date}</td>
+                      <td>{insideData.name}</td>
+                      <td>{insideData.sector_id}</td>
+                      </tr>
+                    )
+                  })}
+              </tbody>
+            </table>
+          </div>
     </div>
   )
 }
