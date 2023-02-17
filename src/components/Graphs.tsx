@@ -35,10 +35,10 @@ const Graphs = (props: { data: DataProps[] }) => {
 
     useEffect(() => {
         setChartData({
-            labels: [],
+            labels: keysArray,
             datasets: [{
                 label: "Interactions",
-                data: [12, 55, 66, 20, 10],
+                data: valuesArray,
                 borderColor: "rgb(53, 162, 250)",
                 backgroundColor: "rgba(123, 62, 50, 0.4)",
             }
@@ -65,8 +65,6 @@ const Graphs = (props: { data: DataProps[] }) => {
 
   return (
     <div className='Graphs'>
-        <p>Keys: {keysArray.join(', ')}</p>
-        <p>Values: {valuesArray.join(', ')}</p>
         <Bar options={chartOptions} data={chartData} />
     </div>
   )
