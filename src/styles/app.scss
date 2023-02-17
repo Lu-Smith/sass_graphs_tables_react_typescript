@@ -17,7 +17,16 @@
 }
 
 .Graphs, .Tables {
-    width: 80%;
+    width: 90%;
     padding: $base-padding;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.Graphs .graphContainer {
+    background-color: $secondary-background; 
+    border-radius: $base-border-radius;
+    padding: $large-padding;
+    margin-bottom: $base-margin;
 }
 

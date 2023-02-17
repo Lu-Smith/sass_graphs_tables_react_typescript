@@ -26,6 +26,7 @@ interface DataSetsPie {
     data: number[],
     backgroundColor: string[],
     hoverOffset: number,
+    borderColor: string[],
 };
 
 const Graphs = (props: { data: DataProps[] }) => {
@@ -90,8 +91,10 @@ const Graphs = (props: { data: DataProps[] }) => {
                 legend: false,
                 title: {
                     display: true,
-                    text: "A client interaction with a sector."
-                }
+                    text: "A client interaction with a sector.",
+                    color: "rgb(13, 63, 82)",
+                    padding: 20,
+                }  ,  
             }
         });
         setChartDataPie({
@@ -112,7 +115,20 @@ const Graphs = (props: { data: DataProps[] }) => {
                     "rgb(245, 12, 32)",
                     "rgb(13, 63, 82)",
                 ],
-                hoverOffset: 10,
+                borderColor: [
+                    "rgba(189, 117, 103, 0.5)",
+                    "rgba(41, 172, 51, 0.5)",
+                    "rgba(206, 42, 165, 0.5)",
+                    "rgba(38, 138, 108, 0.5)",
+                    "rgba(238, 235, 71, 0.5)",
+                    "rgba(86, 14, 88, 0.5)",
+                    "rgba(16, 75, 23, 0.5)",
+                    "rgba(243, 136, 13, 0.5)",
+                    "rgba(20, 225, 240, 0.5)",
+                    "rgba(245, 12, 32, 0.5)",
+                    "rgba(13, 63, 82, 0.5)",
+                ],
+                hoverOffset: 30,
             }
             ],
         });
@@ -120,11 +136,17 @@ const Graphs = (props: { data: DataProps[] }) => {
             responsive: true,
             plugins: {
                 legend: {
-                    position: "right"
+                    position: "left",
+                    labels: {
+                        padding: 15, 
+                        color: "rgb(13, 63, 82)",
+                      },
                 },
                 title: {
                     display: true,
-                    text: "A client interaction with a sector."
+                    text: "A client interaction with a sector.",
+                    color: "rgb(13, 63, 82)",
+                    padding: 20,
                 }
             }
         });
@@ -133,10 +155,14 @@ const Graphs = (props: { data: DataProps[] }) => {
    
   return (
     <div className='Graphs'>
-        <h2>Graph 1</h2>
-        <Bar options={chartOptionsBar} data={chartDataBar} />
-        <h2>Graph 2</h2>
-        <Pie data={chartDataPie} options={chartOptionsPie}/>
+        <div className="graphContainer">
+            <h2>Graph 1</h2>
+            <Bar options={chartOptionsBar} data={chartDataBar} />
+        </div>
+        <div className="graphContainer">
+            <h2>Graph 2</h2>
+            <Pie data={chartDataPie} options={chartOptionsPie}/>
+        </div>
     </div>
   )
 

@@ -18,7 +18,7 @@ h1 {
 }
 
 h3 {
-  background-color: #f0ece2;
+  background-color: #f7f5f1;
   color: #c7b198;
 }
 
@@ -37,7 +37,7 @@ a {
 
 .Header, .Footer {
   padding: 0.75rem;
-  background-color: #f0ece2;
+  background-color: #f7f5f1;
 }
 
 .Header {
@@ -54,6 +54,15 @@ a {
 }
 
 .Graphs, .Tables {
-  width: 80%;
+  width: 90%;
   padding: 0.75rem;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.Graphs .graphContainer {
+  background-color: #f7f5f1;
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin-bottom: 0.75rem;
 }/*# sourceMappingURL=app.css.map */
