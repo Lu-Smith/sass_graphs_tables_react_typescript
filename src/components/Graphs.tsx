@@ -25,11 +25,17 @@ const Graphs = (props: { data: DataProps[] }) => {
     });
 
     const [chartOptions, setChartOptions] = useState({});
+    const itemCounts = CountItems(props.data);
+
+    const keysArray = Array.from(itemCounts.keys());
+    const valuesArray = Array.from(itemCounts.values());
+
+    console.log(keysArray);
 
 
     useEffect(() => {
         setChartData({
-            labels:  [],
+            labels: [],
             datasets: [{
                 label: "Interactions",
                 data: [12, 55, 66, 20, 10],
@@ -52,18 +58,15 @@ const Graphs = (props: { data: DataProps[] }) => {
         })
     }, []);
 
-    const itemCounts = CountItems(props.data);
+   
  
 
 
 
   return (
     <div className='Graphs'>
-           {Array.from(itemCounts.entries()).map(([key, value]) => (
-        <p key={key}>
-          {key}: {value}
-        </p>
-      ))}
+        <p>Keys: {keysArray.join(', ')}</p>
+        <p>Values: {valuesArray.join(', ')}</p>
         <Bar options={chartOptions} data={chartData} />
     </div>
   )
