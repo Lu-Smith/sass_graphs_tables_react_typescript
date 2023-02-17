@@ -15,8 +15,10 @@ interface DataProps {
 interface DataSetsBar {
     label: string,
     data: number[],
-    borderColor: string,
-    backgroundColor: string,
+    borderColor: string[],
+    backgroundColor: string[],
+    borderWidth: number,
+    borderRadius: number,
 };
 
 interface DataSetsPie {
@@ -35,7 +37,8 @@ const Graphs = (props: { data: DataProps[] }) => {
         labels: [], datasets: [],
     });
 
-    const [chartOptions, setChartOptions] = useState({});
+    const [chartOptionsBar, setChartOptionsBar] = useState({});
+    const [chartOptionsPie, setChartOptionsPie] = useState({});
     const itemCounts = CountItems(props.data);
 
     const keysArray = Array.from(itemCounts.keys());
@@ -50,17 +53,41 @@ const Graphs = (props: { data: DataProps[] }) => {
             datasets: [{
                 label: "Interactions",
                 data: valuesArray,
-                borderColor: "rgb(53, 162, 250)",
-                backgroundColor: "rgba(123, 62, 50, 0.4)",
+                borderColor: [
+                    "rgb(189, 117, 103)",
+                    "rgb(41, 172, 51)",
+                    "rgb(206, 42, 165)",
+                    "rgb(38, 138, 108)",
+                    "rgb(238, 235, 71)",
+                    "rgb(86, 14, 88)",
+                    "rgb(16, 75, 23)",
+                    "rgb(243, 136, 13)",
+                    "rgb(20, 225, 240)",
+                    "rgb(245, 12, 32)",
+                    "rgb(13, 63, 82)",
+                ],
+                backgroundColor: [
+                    "rgba(189, 117, 103, 0.8)",
+                    "rgba(41, 172, 51, 0.8)",
+                    "rgba(206, 42, 165, 0.8)",
+                    "rgba(38, 138, 108, 0.8)",
+                    "rgba(238, 235, 71, 0.8)",
+                    "rgba(86, 14, 88, 0.8)",
+                    "rgba(16, 75, 23, 0.8)",
+                    "rgba(243, 136, 13, 0.8)",
+                    "rgba(20, 225, 240, 0.8)",
+                    "rgba(245, 12, 32, 0.8)",
+                    "rgba(13, 63, 82, 0.8)",
+                ],
+                borderWidth: 2,
+                borderRadius: 10,
             }
             ],
         });
-        setChartOptions({
+        setChartOptionsBar({
             responsive: true,
             plugins: {
-                legend: {
-                    position: "top"
-                },
+                legend: false,
                 title: {
                     display: true,
                     text: "A client interaction with a sector."
@@ -84,23 +111,32 @@ const Graphs = (props: { data: DataProps[] }) => {
                     "rgb(20, 225, 240)",
                     "rgb(245, 12, 32)",
                     "rgb(13, 63, 82)",
-                    
                 ],
                 hoverOffset: 10,
             }
             ],
         });
+        setChartOptionsPie({
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: "right"
+                },
+                title: {
+                    display: true,
+                    text: "A client interaction with a sector."
+                }
+            }
+        });
     }, [keysArray, valuesArray]);
 
    
- 
-
-
-
   return (
     <div className='Graphs'>
-        <Bar options={chartOptions} data={chartDataBar} />
-        <Pie data={chartDataPie} />
+        <h2>Graph 1</h2>
+        <Bar options={chartOptionsBar} data={chartDataBar} />
+        <h2>Graph 2</h2>
+        <Pie data={chartDataPie} options={chartOptionsPie}/>
     </div>
   )
 

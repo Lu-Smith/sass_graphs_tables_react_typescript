@@ -24,7 +24,6 @@ const Main: React.FC = () => {
 
   return (
     <div className='Main'>
-      <h2>Graph 1</h2>
       <Graphs data={data} />
       <Tables data={data} />
     </div>

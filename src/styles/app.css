@@ -51,4 +51,9 @@ a {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+
+.Graphs, .Tables {
+  width: 80%;
+  padding: 0.75rem;
 }/*# sourceMappingURL=app.css.map */
