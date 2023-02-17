@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import {Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend} from 'chart.js';
-import {Bar} from "react-chartjs-2";
+import {Chart as ChartJS, ArcElement, LineElement, BarElement, PointElement, BarController, LineController, CategoryScale, LinearScale, Tooltip, Title, Legend} from 'chart.js';
+import {Bar, Pie} from "react-chartjs-2";
 import CountItems from './CountItems';
 ChartJS.register (
-    CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend
+    CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ArcElement, LineElement, PointElement, BarController, LineController, CategoryScale
 )
 
 interface DataProps {
@@ -12,15 +12,26 @@ interface DataProps {
     sector_id: string,
 };
 
-interface DataSetsProps {
+interface DataSetsBar {
     label: string,
     data: number[],
     borderColor: string,
     backgroundColor: string,
 };
 
+interface DataSetsPie {
+    label: string,
+    data: number[],
+    backgroundColor: string[],
+    hoverOffset: number,
+};
+
 const Graphs = (props: { data: DataProps[] }) => {
-    const [chartData, setChartData] = useState<{labels: string[]; datasets: DataSetsProps[]}>({
+    const [chartDataBar, setChartDataBar] = useState<{labels: string[]; datasets: DataSetsBar[]}>({
+        labels: [], datasets: [],
+    });
+
+    const [chartDataPie, setChartDataPie] = useState<{labels: string[]; datasets: DataSetsPie[]}>({
         labels: [], datasets: [],
     });
 
@@ -34,7 +45,7 @@ const Graphs = (props: { data: DataProps[] }) => {
 
 
     useEffect(() => {
-        setChartData({
+        setChartDataBar({
             labels: keysArray,
             datasets: [{
                 label: "Interactions",
@@ -55,8 +66,30 @@ const Graphs = (props: { data: DataProps[] }) => {
                     text: "A client interaction with a sector."
                 }
             }
-        })
-    }, []);
+        });
+        setChartDataPie({
+            labels: keysArray,
+            datasets: [{
+                label: "Interactions",
+                data: valuesArray,
+                backgroundColor: [
+                    "rgba(123, 62, 50, 0.4)",
+                    "rgba(196, 110, 93, 0.4)",
+                    "rgba(226, 80, 50, 0.4)",
+                    "rgba(187, 147, 138, 0.4)",
+                    "rgba(123, 62, 50, 0.4)",
+                    "rgba(172, 36, 9, 0.4)",
+                    "rgba(123, 62, 50, 0.4)",
+                    "rgba(123, 62, 50, 0.4)",
+                    "rgba(123, 62, 50, 0.4)",
+                    "rgba(123, 62, 50, 0.4)",
+                    "rgba(123, 62, 50, 0.4)",
+                ],
+                hoverOffset: 20,
+            }
+            ],
+        });
+    }, [keysArray, valuesArray]);
 
    
  
@@ -65,7 +98,8 @@ const Graphs = (props: { data: DataProps[] }) => {
 
   return (
     <div className='Graphs'>
-        <Bar options={chartOptions} data={chartData} />
+        <Bar options={chartOptions} data={chartDataBar} />
+        <Pie data={chartDataPie} />
     </div>
   )
 
