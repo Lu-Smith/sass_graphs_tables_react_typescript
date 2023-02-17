@@ -11,6 +11,7 @@ const Tables = (props: { data: DataProps[] }) => {
     const itemCounts = CountItems(props.data);
   return (
     <div className='Tables'>
+        <div className='tableContainer'>
         <h2>Table 1</h2>
         <table>
             <thead>
@@ -28,6 +29,8 @@ const Tables = (props: { data: DataProps[] }) => {
               ))}
             </tbody>
         </table>
+        </div>
+        <div className='tableContainer'>
         <h2>Table 2</h2>
         <table>
             <thead>
@@ -49,6 +52,7 @@ const Tables = (props: { data: DataProps[] }) => {
                 })}
             </tbody>
         </table>
+        </div>
     </div>
   )
 }
