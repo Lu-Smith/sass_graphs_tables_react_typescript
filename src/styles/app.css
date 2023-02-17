@@ -87,10 +87,17 @@ a {
 .Tables .tableContainer td {
   padding: 0.75rem;
   text-align: center;
-  border: 2px solid #f7f5f1;
+  border: 2px solid #dfd3c3;
 }
 .Tables .tableContainer th {
   background-color: #dfd3c3;
   color: #596e79;
   font-weight: bold;
+}
+.Tables .tableContainer tr:nth-child(even) {
+  background-color: #dfd3c3;
+  color: #596e79;
+}
+.Tables .tableContainer tr:hover {
+  background-color: #c7b198;
 }/*# sourceMappingURL=app.css.map */

@@ -56,6 +56,15 @@
     color: $primary-color;
     font-weight: bold;
   }
+
+  tr:nth-child(even) {
+    background-color: $primary-background;
+    color: $primary-color;
+  }
+
+  tr:hover {
+    background-color: $secondary-color;
+  }
 }
 
 
