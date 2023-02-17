@@ -45,9 +45,6 @@ const Graphs = (props: { data: DataProps[] }) => {
     const keysArray = Array.from(itemCounts.keys());
     const valuesArray = Array.from(itemCounts.values());
 
-    console.log(keysArray);
-
-
     useEffect(() => {
         setChartDataBar({
             labels: keysArray,
@@ -94,7 +91,7 @@ const Graphs = (props: { data: DataProps[] }) => {
                     text: "A client interaction with a sector.",
                     color: "rgb(13, 63, 82)",
                     padding: 20,
-                }  ,  
+                } ,  
             }
         });
         setChartDataPie({
@@ -150,11 +147,11 @@ const Graphs = (props: { data: DataProps[] }) => {
                 }
             }
         });
-    }, [keysArray, valuesArray]);
+    }, []);
 
    
   return (
-    <div className='Graphs'>
+    <div className='Graphs' id="graphs">
         <div className="graphContainer">
             <h2>Graph 1</h2>
             <Bar options={chartOptionsBar} data={chartDataBar} />

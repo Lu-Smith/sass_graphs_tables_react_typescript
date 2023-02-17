@@ -8,9 +8,10 @@ interface DataProps {
 }
 
 const Tables = (props: { data: DataProps[] }) => {
+
     const itemCounts = CountItems(props.data);
   return (
-    <div className='Tables'>
+    <div className='Tables' id="tables">
         <div className='tableContainer'>
         <h2>Table 1</h2>
         <table>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef  } from 'react';
 import Tables from './Tables';
 import Graphs from './Graphs';
 
@@ -9,13 +9,28 @@ interface DataProps {
 }
 
 const Main: React.FC = () => {
+  const graphRef = useRef<HTMLDivElement>(null);
+  const tableRef = useRef<HTMLDivElement>(null);
+
+  
+  const scrollToGraph = () => {
+    if (graphRef.current) {
+      graphRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const scrollToTable = () => {
+    if (tableRef.current) {
+      tableRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const [data, setData] = useState<DataProps[] | null>(null);
 
   useEffect(() => {
     fetch('http://substantiveresearch.pythonanywhere.com/')
       .then(response => response.json())
       .then(data => setData(data));
-      console.log(data);
   }, []);
 
   if (!data) {
@@ -24,8 +39,12 @@ const Main: React.FC = () => {
 
   return (
     <div className='Main'>
-      <Graphs data={data} />
-      <Tables data={data} />
+      <div ref={graphRef}>
+        <Graphs data={data} />
+      </div>
+      <div ref={tableRef}>
+        <Tables data={data} />
+      </div>
     </div>
   )
 }
