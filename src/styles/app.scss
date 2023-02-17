@@ -2,19 +2,9 @@
 @import 'mixins.scss';
 @import 'variables.scss';
 @import 'base.scss';
+@import 'headerFooter.scss';
 
-.Header, .Footer {
-    padding: $base-padding;
-    background-color: $secondary-background; 
-}
 
-.Header {
-    @include display(row, space-between);
-
-    ul {
-        @include display(row, space-between);
-    }
-}
 
 .Graphs, .Tables {
     width: 90%;
