@@ -1,4 +1,5 @@
 import React from 'react';
+import CountItems from './CountItems';
 
 interface DataProps {
     date: string,
@@ -7,8 +8,27 @@ interface DataProps {
 }
 
 const Tables = (props: { data: DataProps[] }) => {
+    const itemCounts = CountItems(props.data);
   return (
     <div className='Tables'>
+        <h2>Table 1</h2>
+        <table>
+            <thead>
+                <tr>
+                <th>Name</th>
+                <th>Interaction</th>
+                </tr>
+            </thead>
+            <tbody>
+              {Array.from(itemCounts.entries()).map(([key, value]) => (
+                <tr key={key}>
+                    <td>{key}</td>
+                    <td>{value}</td>
+                </tr>
+              ))}
+            </tbody>
+        </table>
+        <h2>Table 2</h2>
         <table>
             <thead>
                 <tr>

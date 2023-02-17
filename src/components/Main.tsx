@@ -16,7 +16,7 @@ const Main: React.FC = () => {
       .then(response => response.json())
       .then(data => setData(data));
       console.log(data);
-  }, [data]);
+  }, []);
 
   if (!data) {
     return <div>Loading...</div>;
@@ -26,7 +26,6 @@ const Main: React.FC = () => {
     <div className='Main'>
       <h2>Graph 1</h2>
       <Graphs data={data} />
-      <h2>Table 1</h2>
       <Tables data={data} />
     </div>
   )
