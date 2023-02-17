@@ -5,8 +5,19 @@
 
 .Header {
     @include display(row, space-between);
+    position: fixed;
+    width: 100vw;
 
     ul {
         @include display(row, space-between);
+    }
+
+    button {
+        padding: $base-button-padding;
+        border: none;
+        border-radius: $base-border-radius;
+        box-shadow: $base-box-shadow;
+        background-color: $primary-background;
+        color: $primary-color;
     }
 }

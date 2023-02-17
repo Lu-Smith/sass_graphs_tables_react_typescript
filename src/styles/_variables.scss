@@ -7,6 +7,7 @@ $secondary-background: #f7f5f1;
 //spacing
 $base-padding: 0.75rem;
 $large-padding: 1.5rem;
+$base-button-padding: 0.5rem 1rem;
 $base-margin: 0.75rem;
 $large-margin: 1.5rem;
 
@@ -18,3 +19,6 @@ $small-font: $base-font * 0.75;
 //borders
 $base-border: 2px solid $primary-background;
 $base-border-radius: 20px;
+
+//shadows
+$base-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
