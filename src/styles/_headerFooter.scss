@@ -6,6 +6,7 @@
 .Header {
     @include display(row, space-between);
     position: fixed;
+    top: 0;
     width: 100vw;
 
     ul {
@@ -19,5 +20,18 @@
         box-shadow: $base-box-shadow;
         background-color: $primary-background;
         color: $primary-color;
+        font-weight: 600;
+        transition: 200ms all ease-in-out;
+        cursor: pointer;
+        position: relative;
+    }
+
+    button:hover {
+        transform: translateY(3px);
+        border: none;
+        box-shadow: none;
+        background-color: $primary-color;
+        color: $secondary-background;
+        font-weight: 600;
     }
 }
