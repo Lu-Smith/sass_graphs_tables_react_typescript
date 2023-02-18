@@ -44,7 +44,7 @@ a {
     color: rgb(74, 18, 110);
     transform: rotate(-10deg);
   }
-  90% {
+  80% {
     color: #bb4426;
     transform: rotate(10deg);
   }

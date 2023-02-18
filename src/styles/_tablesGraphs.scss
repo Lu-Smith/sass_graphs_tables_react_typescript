@@ -1,0 +1,52 @@
+.Graphs, .Tables {
+    width: 90%;
+    padding: $base-padding;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.Graphs .graphContainer {
+    background-color: $secondary-background; 
+    border-radius: $base-border-radius;
+    padding: $large-padding;
+    margin-top: $large-margin;
+}
+
+.Tables .tableContainer {
+  background-color: $primary-color;
+  color: $primary-background;
+  @include display(column, center);
+  border-radius: $base-border-radius;
+  margin-top: $large-margin;
+  padding: $large-padding;
+
+  table {
+    margin-top: $large-margin;
+    border-collapse: collapse;
+    width: 90%;
+  }
+
+  th,
+  td {
+    padding: $base-padding;
+    text-align: center;
+    border: $base-border;
+  }
+
+  th {
+    background-color: $primary-background;
+    color: $primary-color;
+    font-weight: bold;
+  }
+
+  tr:nth-child(even) {
+    background-color: $primary-background;
+    color: $primary-color;
+  }
+
+  tr:hover {
+    background-color: $secondary-color;
+  }
+}
+
+
