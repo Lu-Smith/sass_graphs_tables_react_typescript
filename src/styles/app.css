@@ -35,6 +35,24 @@ a {
   color: #c7b198;
 }
 
+@keyframes wave {
+  0% {
+    color: #596e79;
+    transform: rotate(0deg);
+  }
+  10% {
+    color: rgb(74, 18, 110);
+    transform: rotate(-10deg);
+  }
+  90% {
+    color: #bb4426;
+    transform: rotate(10deg);
+  }
+  100% {
+    color: #596e79;
+    transform: rotate(0deg);
+  }
+}
 .Header, .Footer {
   padding: 0.75rem;
   background-color: #f7f5f1;
@@ -74,6 +92,17 @@ a {
   background-color: #596e79;
   color: #f7f5f1;
   font-weight: 600;
+}
+
+.Footer .wave-link {
+  display: inline-block;
+  position: relative;
+  color: #596e79;
+  transition: color 0.3s ease;
+}
+
+.Footer .wave-link:hover {
+  animation: wave 2s linear;
 }
 
 .Graphs, .Tables {

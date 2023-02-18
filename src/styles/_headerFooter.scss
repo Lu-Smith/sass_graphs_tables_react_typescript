@@ -1,3 +1,22 @@
+@keyframes wave {
+    0% {
+      color: $primary-color;
+      transform: rotate(0deg);
+    }
+    10% {
+      color: rgb(74, 18, 110);
+      transform: rotate(-10deg);
+    }
+    90% {
+        color: #bb4426;
+        transform: rotate(10deg);
+    }
+    100% {
+    color: $primary-color;
+    transform: rotate(0deg);
+    }
+}
+
 .Header, .Footer {
     padding: $base-padding;
     background-color: $secondary-background; 
@@ -35,3 +54,17 @@
         font-weight: 600;
     }
 }
+
+.Footer .wave-link {
+    display: inline-block;
+    position: relative;
+    color: $primary-color;
+    transition: color 0.3s ease;
+}
+
+.Footer .wave-link:hover {
+    animation: wave 2s linear;
+}
+
+
+
